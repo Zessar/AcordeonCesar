@@ -1,0 +1,257 @@
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Color */
+
+:root {
+
+    /* Background */
+    
+    --bg-gradient-violet: hsl(273, 75%, 66%);
+    --bg-gradient-blue: hsl(240, 73%, 65%);
+    
+    /* Texto */
+
+    --text-desaturated-blue: hsl(238, 29%, 16%);
+    --text-soft-red: hsl(14, 88%, 65%);
+
+    --text-dark-blue: hsl(237, 12%, 33%);
+    --text-darkgrayish-blue: hsl(240, 6%, 50%);
+
+    /* Divisor */
+
+    --divider-ligthgrayish-blue: hsl(240, 5%, 91%);
+}
+
+
+/* Body */
+
+body {
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background: linear-gradient(var(--bg-gradient-violet), var(--bg-gradient-blue)) no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Imagen */
+
+.section__header {
+    background-color: rgb(241, 240, 240);
+    width: 750px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 15px 20px 7px hsla(0, 0%, 0%, 0.194);
+}
+
+.header__box {
+    position: absolute;
+    width: 1000px;
+    height: 400px;
+    z-index: 1; 
+}
+
+.box__desktop {
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: 125px;
+    left: 57px;
+    z-index: 10;
+}
+
+.header__img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.dark {
+    position: absolute;
+    top: -215px;
+    left: -405px;
+    width: 700px;
+    height: 700px;
+}
+
+.desktop {
+    position: absolute;
+    top: 50px;
+    left: -65px;
+    width: 48%;
+}
+
+
+/* Accordion */
+
+.accordion {
+    padding: 0 7em 0 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.accordion__h1 {
+    color: var(--text-desaturated-blue);
+    font-size: 2.2em;
+    margin-bottom: 1em;
+}
+
+
+.question {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--divider-ligthgrayish-blue);
+    cursor: pointer;
+}
+
+.question.activo {
+    font-weight: 700;
+    font-size: 1em;
+    color: var(--text-desaturated-blue);
+    border-bottom: none;
+}
+
+.title {
+    padding: 1em 0;
+    color: var(--text-desaturated-blue);
+    transition: all 300ms ease-in-out;
+}
+
+.title:hover {
+    color: var(--text-soft-red);
+}
+
+.pharagrahp {
+    padding: 0 0 1em 0;
+    border-bottom: 2px solid var(--divider-ligthgrayish-blue);
+    color: var(--text-darkgrayish-blue);
+}
+
+.answer {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+}
+
+.answer.activo {
+    height: 5.5em;
+    padding: 0.3em 0;
+}
+
+.arrow{
+    rotate: 0deg;
+    width: 10px;
+    height: 8px;
+    transition: all 300ms ease-in;
+}
+
+.arrow.activo {
+    rotate: 180deg;
+}
+
+/* Atributo */
+
+.attribution { 
+    padding-top: 4em;
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    text-decoration: none;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%); 
+}
+
+/* -----------Responsive--------------- */
+
+.box__mobile {
+    display: none;
+}
+.mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 375px) {
+
+    /* body {
+        width: 100%;
+        height: 100%;
+    } */
+
+
+    .header {
+        display: block;
+        margin-top: 100px;
+    }
+
+    .header__box {
+        width: 100%;
+        position: absolute;
+        top: 52px;
+        left: calc(50% - 100px);
+        width: 200px;
+        height: 200px;
+    }
+
+    .section__header {
+        width: 300px;
+        height: 500px;
+        display: block;
+    }
+
+    .box__desktop {
+        display: none;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .accordion {
+        margin-top: 135px;
+        width: 100%;
+        text-align: center;
+        padding: 0 2em;
+        z-index: 2;
+    }
+
+    .pharagrahp, .title {
+        text-align: left;
+    }
+
+    .dark {
+        position: absolute;
+        top: -110px;
+        left: calc(50% - 100px);
+        width: 200px;
+        height: 200px;
+    }
+
+    .title:hover {
+        color: var(--text-dark-blue);
+    }
+
+    .attribution {
+        padding-top: 1em;
+    }
+}
